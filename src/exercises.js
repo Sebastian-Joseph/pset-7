@@ -1,7 +1,11 @@
 function commonEnd(a, b) {
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
-  }
+  } else if (){
+
+  } else {
+    return false;
+  };
 
   // write your code here
 }
