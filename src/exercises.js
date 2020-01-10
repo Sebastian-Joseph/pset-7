@@ -1,15 +1,16 @@
 function commonEnd(a, b) {
-  var first = a[0];
-  var firsttwo = b[0];
-  var last = a[a.length -1];
-  var lasttwo = b[b.length -1];
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
-  } else if (a.length >= 1 && b.length >= 1 && first === firsttwo || last === lasttwo){
+  }
+    var first = a[0];
+   var firsttwo = b[0];
+   var last = a[a.length -1];
+   var lasttwo = b[b.length -1];
+   } else if (a.length >= 1 && b.length >= 1 && first === firsttwo || last === lasttwo){
     return true;
-  } else {
-    return false;
-  };
+   } else {
+     return false;
+   };
 
   // write your code here
 }
