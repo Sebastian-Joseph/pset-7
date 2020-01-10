@@ -17,19 +17,23 @@ if (a.length >= 1 && b.length >= 1 && first === firsttwo || last === lasttwo){
 }
 
 function endsMeet(values, n) {
-  if (!values || values < n || !Number.isInteger(n)) {
-    return [];
-}
-var n1 = n[0];
-var n2 = n[n.length -1];
-if (!n1 || !n2) {
-  return [];
-} else {
-var values = values.length;
-for (i = 0; i < values; i++) {
+  let array = [];
+  if (!values || values < n || !Number.isInteger(n) || n < 0) {
+    return array;
+} else if (n === 0) {
   return values;
+} else {
+  for (let i = 0; i < n; i++) {
+    if (values[i] !== undefined) {
+      array.push(values[i]);
+    }
+  } for (let i = n; i > 0; i--) {
+    if (values[values.length -i] !== undefined) {
+      array.push(values[values.length -i])
+    }
+  } return array;
 }
-}
+
 
 
 
