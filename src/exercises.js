@@ -17,6 +17,24 @@ if (a.length >= 1 && b.length >= 1 && first === firsttwo || last === lasttwo){
 }
 
 function endsMeet(values, n) {
+  if (!values || values < n || !Number.isInteger(n)) {
+    return [];
+}
+var n1 = n[0];
+var n2 = n[n.length -1];
+if (!n1 || !n2) {
+  return [];
+} else {
+var values = values.length;
+for (i = 0; i < values; i++) {
+  return values;
+}
+}
+
+
+
+
+
 
   // write your code here
 }
