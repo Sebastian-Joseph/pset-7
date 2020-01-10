@@ -2,11 +2,12 @@ function commonEnd(a, b) {
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
   }
-    var first = a[0];
-   var firsttwo = b[0];
-   var last = a[a.length -1];
-   var lasttwo = b[b.length -1];
-   } else if (a.length >= 1 && b.length >= 1 && first === firsttwo || last === lasttwo){
+  var first = a[0];
+ var firsttwo = b[0];
+ var last = a[a.length -1];
+ var lasttwo = b[b.length -1];
+
+if (a.length >= 1 && b.length >= 1 && first === firsttwo || last === lasttwo){
     return true;
    } else {
      return false;
@@ -16,10 +17,21 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
+
   // write your code here
 }
 
 function difference(numbers) {
+  if (!numbers || numbers < 1 || !Number.isInteger(numbers)) {
+    return undefined;
+  }
+  if (numbers >= 1 || Number.isInteger(numbers)) {
+  var numbers = Math.max() - Math.min()
+  } else {
+    return undefined;
+  }
+
+
   // write your code here
 }
 
