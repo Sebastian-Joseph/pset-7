@@ -17,8 +17,9 @@ if (a.length >= 1 && b.length >= 1 && first === firsttwo || last === lasttwo){
 }
 
 function endsMeet(values, n) {
+
   let array = [];
-  if (!values || values < n || !Number.isInteger(n) || n < 0) {
+  if (!values || values.length < n || !Number.isInteger(n) || n < 0) {
     return array;
 } else if (n === 0) {
   return values;
@@ -39,21 +40,18 @@ function endsMeet(values, n) {
 
 
 
-
   // write your code here
 }
 
 function difference(numbers) {
-  if (!numbers || numbers < 1 || !Number.isInteger(numbers)) {
+  if (!numbers || numbers.length < 1 || isNaN(numbers)) {
     return undefined;
+  } else if (numbers >= 1 && !isNaN(numbers)) {
+    var max = Math.max.apply(null, numbers);
+    var min = Math.min.apply(null, numbers);
+    let diff = max - min
+    return diff;
   }
-  if (numbers >= 1 || Number.isInteger(numbers)) {
-  var numbers = Math.max() - Math.min()
-  } else {
-    return undefined;
-  }
-
-
   // write your code here
 }
 
