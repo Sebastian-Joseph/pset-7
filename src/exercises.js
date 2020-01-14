@@ -48,9 +48,15 @@ function difference(numbers) {
   let max = 0;
   let min = 0;
 
-  if (!numbers || numbers.length < 1 )) {
+  if (numbers == undefined || numbers < 1 || numbers.some(isNaN)) {
     return undefined;
-  } 
+  } else {
+    let max = Math.max.apply(null, numbers)
+    let min = Math.min.apply(null, numbers)
+    let diff = max - min;
+    return diff
+  }
+
 
 
 
@@ -58,6 +64,17 @@ function difference(numbers) {
 }
 
 function max(number) {
+  if (number == undefined || number <= 2 || number.some(isNaN)) {
+    return undefined;
+  } else if ( number.length % 2 == 0) {
+    return undefined;
+  } else {
+let first = number[0];
+let middle = number[Math.floor(number.length / 2)];
+let last = number[number.length - 1]
+let array = [first, middle, last];
+let large = Math.max.apply(null, array);
+  }
   // write your code here
 }
 
