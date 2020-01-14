@@ -44,14 +44,16 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  if (!numbers || numbers.length < 1 || isNaN(numbers)) {
+  let diff = 0;
+  let max = 0;
+  let min = 0;
+
+  if (!numbers || numbers.length < 1 )) {
     return undefined;
-  } else if (numbers >= 1 && !isNaN(numbers)) {
-    var max = Math.max.apply(null, numbers);
-    var min = Math.min.apply(null, numbers);
-    let diff = max - min
-    return diff;
-  }
+  } 
+
+
+
   // write your code here
 }
 
