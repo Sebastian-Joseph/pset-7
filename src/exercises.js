@@ -74,6 +74,7 @@ let middle = number[Math.floor(number.length / 2)];
 let last = number[number.length - 1]
 let array = [first, middle, last];
 let large = Math.max.apply(null, array);
+return large;
   }
   // write your code here
 }
