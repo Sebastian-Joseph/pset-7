@@ -92,6 +92,20 @@ function middle(values) {
 }
 
 function increasing(numbers) {
+  if (numbers == undefined || numbers.some(isNaN)) {
+    return undefined;
+  } else if (numbers.length < 3 || Number.isInteger(numbers)) {
+    return false;
+  } else {
+    for (var i = 0; i < numbers.length; i++) {
+      if (numbers[i] == (numbers[i - 1] + 1) ) {
+        i++
+        if (numbers [i] == (numbers[i - 1] + 1)) {
+          return true;
+        }
+      }
+    }
+  }
   // write your code here
 }
 
