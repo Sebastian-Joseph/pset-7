@@ -85,27 +85,34 @@ function middle(values) {
   } else {
     let leftMiddle = values[(values.length - 1) - (Math.ceil(values.length / 2))];
     let middle = values[values.length - (Math.ceil(values.length / 2))];
-    let array = [leftMiddle, middle]
+    let array = [leftMiddle, middle];
     return array;
   }
   // write your code here
 }
 
 function increasing(numbers) {
-  if (numbers == undefined || numbers.some(isNaN)) {
+  if (numbers == undefined || numbers.some(isNaN) || !numbers || numbers == []) {
     return undefined;
   } else if (numbers.length < 3 || Number.isInteger(numbers)) {
-    return false;
+    return undefined;
   } else {
     for (var i = 0; i < numbers.length; i++) {
       if (numbers[i] == (numbers[i - 1] + 1) ) {
         i++
         if (numbers [i] == (numbers[i - 1] + 1)) {
           return true;
+          break;
+        } else {
+          continue;
         }
+      } else {
+        continue;
       }
     }
+    return false;
   }
+
   // write your code here
 }
 
