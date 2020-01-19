@@ -200,3 +200,4 @@ If you submit your problem set at midnight (i.e., January 21, 2020, at 12:00am),
 - Your code must adhere to the course style guidelines.
 
 Happy coding!
+[![Run on Repl.it](https://repl.it/badge/github/Sebastian-Joseph/pset-7)](https://repl.it/github/Sebastian-Joseph/pset-7)
