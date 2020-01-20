@@ -67,7 +67,7 @@ function difference(numbers) {
 
 function max(number) {
 
- if (number == undefined || number <= 2 || number.some(isNaN)) {
+  if (number == undefined || number <= 2 || number.some(isNaN)) {
     return undefined;
   } else if (number.length % 2 == 0) {
     return undefined;
@@ -193,7 +193,7 @@ function balance(numbers) {
   let halfsum;
   let secondhalfsum = 0;
   let proof;
- if (!numbers || numbers < 2 || numbers.some(isNaN)) {
+  if (!numbers || numbers < 2 || numbers.some(isNaN)) {
     return false;
     proof = false;
   } else {
@@ -204,10 +204,10 @@ function balance(numbers) {
       }
     }
     for (let r = 0; r < numbers.length; r++) {
-sum += numbers[r];
+      sum += numbers[r];
     }
     halfsum = sum / 2;
-    if (sum % 2 === 1 ) {
+    if (sum % 2 === 1) {
       return false;
       proof = false;
     }
@@ -250,8 +250,7 @@ function clumps(values) {
         lastofClump = c1 - 1;
         x = lastofClump;
         clumps++;
-      } else {
-      }
+      } else {}
     }
     return clumps;
   }
