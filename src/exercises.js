@@ -80,6 +80,7 @@ return large;
 }
 
 function middle(values) {
+
   if (values == undefined || values.length < 3 || values.length % 2 == 0) {
     return [];
   } else {
@@ -92,46 +93,133 @@ function middle(values) {
 }
 
 function increasing(numbers) {
-  if (numbers == undefined || numbers.some(isNaN) || !numbers || numbers == []) {
-    return undefined;
-  } else if (numbers.length < 3 || Number.isInteger(numbers)) {
-    return undefined;
-  } else {
-    for (var i = 0; i < numbers.length; i++) {
-      if (numbers[i] == (numbers[i - 1] + 1) ) {
-        i++
-        if (numbers [i] == (numbers[i - 1] + 1)) {
-          return true;
-          break;
-        } else {
-          continue;
-        }
-      } else {
-        continue;
-      }
-    }
-    return false;
+  if (numbers == undefined || numbers == []) {
+     return undefined;
+   } else if (numbers.length < 3 || numbers.some(isNaN)) {
+     return undefined;
+   } else {
+     for (let i = 1; i < numbers.length; i++) {
+       if ((numbers[i - 1] + 1) === numbers[i]) {
+         i++
+         if ((numbers[i - 1] + 1) === numbers[i]) {
+           return true;
+           break;
+         } else {
+           continue;
+         }
+       } else {
+         continue;
+       }
+     }
+     return false;
+   }
+   // write your code here
   }
 
-  // write your code here
-}
-
 function everywhere(values, x) {
+  if (values == undefined || x == undefined || values.length < 1 ) {
+    return false;
+  } else if (!values.includes(x)) {
+    return false;
+  } else { for (let y = values.indexOf(x); y < values.length; y++) {
+        if (values[y] === values[y + 1] && values[y + 1] !== undefined) {
+          return true;
+          break;
+  } else if (x === 0) {
+          return false;
+          break;
+  } else if (values[y] === values[y + 2] && values[y + 2] !== undefined && values[y + 1] !== values[y]) {
+          return true;
+          break;
+  } else if (values[y] === values[y + 3] && values[y + 3] !== undefined && (values[y + 1] && values[y + 2]) !== values[y + 3]) {
+          return true;
+          break;
+  } else {
+          return false;
+          break;
+    }
+    }
+  }
+
+
   // write your code here
 }
 
 function consecutive(numbers) {
-  // write your code here
-}
+  let proof;
+      if (!numbers || numbers.length < 3 || numbers.some(isNaN)) {
+          proof = false;
+          return false;
+      } else {
+          for (let i = 0; i < numbers.length - 1; i++) {
+              if (Number.isInteger(numbers[i]) === false){
+                  proof = false;
+                  return false;
+              }
+          }
 
+          let first;
+          let second;
+          let third;
+
+          for (let x = 0; x < numbers.length - 2; x++) {
+              first = numbers[x];
+              second = numbers[x + 1];
+              third = numbers[x + 2];
+
+              if (first % 2 === 0 && second % 2 === 0 && third % 2 === 0) {
+                  proof = true;
+                  return true;
+              } else if (first % 2 === 1 && second % 2 === 1 && third % 2 === 1) {
+                  proof = true;
+                  return true;
+              }
+          }
+
+          if (proof === true) {
+              return true;
+          } else {
+              return false;
+          }
+      }
+  }
 function balance(numbers) {
-  // write your code here
-  console.log("test");
 }
 
 function clumps(values) {
-  // write your code here
-}
+  let clumps = 0;
+      let flag;
+      let lastIndexOfClump;
+
+      if (!values) {
+          return -1;
+      } else {
+          let target;
+          let around;
+
+          for (let x = 0; x < values.length - 1; x++) {
+              let c1 = x;
+              let c2 = x + 1;
+              target = values[c1];
+              around = values[c2];
+
+              if (target === around) {
+                  while (target === around) {
+                      target = values[c1++];
+                      around = values[c2++];
+                  }
+
+                  flag = true;
+                  lastIndexOfClump = c1 - 1;
+                  x = lastIndexOfClump;
+                  clumps++;
+              } else {
+                  //restart the for loop
+              }
+          }
+          return clumps;
+      }
+  }
 
 /*
  * Exports all functions for use in external grader.js file. Do not modify.
