@@ -203,8 +203,8 @@ function balance(numbers) {
         proof = false;
       }
     }
-    for (let w = 0; w < numbers.length; w++) {
-sum += numbers[w];
+    for (let r = 0; r < numbers.length; r++) {
+sum += numbers[r];
     }
     halfsum = sum / 2;
     if (sum % 2 === 1 ) {
