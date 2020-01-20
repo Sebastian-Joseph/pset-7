@@ -66,7 +66,8 @@ function difference(numbers) {
 }
 
 function max(number) {
-  if (number == undefined || number <= 2 || number.some(isNaN)) {
+
+ if (number == undefined || number <= 2 || number.some(isNaN)) {
     return undefined;
   } else if (number.length % 2 == 0) {
     return undefined;
@@ -187,7 +188,43 @@ function consecutive(numbers) {
   }
 }
 
-function balance(numbers) {}
+function balance(numbers) {
+  let sum = 0;
+  let halfsum;
+  let secondhalfsum = 0;
+  let proof;
+ if (!numbers || numbers < 2 || numbers.some(isNaN)) {
+    return false;
+    proof = false;
+  } else {
+    for (let i = 0; i < numbers.length - 1; i++) {
+      if (Number.isInteger(numbers[i]) === false) {
+        return false;
+        proof = false;
+      }
+    }
+    for (let w = 0; w < numbers.length; w++) {
+sum += numbers[w];
+    }
+    halfsum = sum / 2;
+    if (sum % 2 === 1 ) {
+      return false;
+      proof = false;
+    }
+    for (let x = 0; x < numbers.length - 1; x++) {
+      secondhalfsum += numbers[x];
+      if (secondhalfsum === halfsum) {
+        return true;
+        proof = true;
+      }
+    }
+    if (proof === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
 function clumps(values) {
   let clumps = 0;
